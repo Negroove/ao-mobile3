@@ -1,0 +1,53 @@
+@ContactosApi_HostAddress = http://localhost:5234
+@token = PEGAR_TOKEN_AQUI
+
+GET {{ContactosApi_HostAddress}}/minimal/contactos
+Accept: application/json
+
+###
+
+POST {{ContactosApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "usuario": "admin",
+  "password": "1234"
+}
+
+###
+
+GET {{ContactosApi_HostAddress}}/api/contacto/1
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+POST {{ContactosApi_HostAddress}}/api/contacto/add
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nombre": "Grace",
+  "apellido": "Hopper",
+  "telefono": "11-5555-0003",
+  "email": "grace@contactos.com"
+}
+
+###
+
+PUT {{ContactosApi_HostAddress}}/api/contacto/edit/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": 1,
+  "nombre": "Ada",
+  "apellido": "Lovelace",
+  "telefono": "11-5555-9999",
+  "email": "ada@contactos.com"
+}
+
+###
+
+DELETE {{ContactosApi_HostAddress}}/api/contacto/delete/2
+Authorization: Bearer {{token}}
