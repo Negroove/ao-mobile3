@@ -10,7 +10,7 @@ public class AuthService
     [
         new Usuario
         {
-            NombreUsuario = "admin",
+            NombreUsuario = "admin@mail.com",
             PasswordHash = string.Empty,
             Rol = "Admin"
         }
@@ -20,7 +20,7 @@ public class AuthService
     {
         foreach (var usuario in _usuarios)
         {
-            usuario.PasswordHash = _passwordHasher.HashPassword(usuario, "1234");
+            usuario.PasswordHash = _passwordHasher.HashPassword(usuario, "123456");
         }
     }
 

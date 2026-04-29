@@ -10,8 +10,8 @@ POST {{ContactosApi_HostAddress}}/api/auth/login
 Content-Type: application/json
 
 {
-  "usuario": "admin",
-  "password": "1234"
+  "usuario": "admin@mail.com",
+  "password": "123456"
 }
 
 ###
